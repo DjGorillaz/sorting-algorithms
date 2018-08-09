@@ -38,6 +38,7 @@ typename std::enable_if<IsRAIter_v<Iter>>::type counting_sort_vector(Iter first,
 
     auto [min, max] = std::minmax_element(first, last);
     //size must be less than std::numeric_limits<Iter::value_type>
+    //may be overflow
     std::size_t size = *max - *min + 1;
     std::vector<Iter::value_type> vector(size, 0);
 
