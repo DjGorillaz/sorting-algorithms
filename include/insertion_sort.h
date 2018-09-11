@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <iterator>
-#include <iostream>
 
 #include <is_ra_iter.h>
 
@@ -19,7 +18,7 @@ typename std::enable_if<IsRAIter_v<Iter>>::type insertion_sort(Iter first, Iter 
             auto inner_prev = std::prev(inner);
             if (value < *inner_prev)
             {
-                *inner = std::move(*inner_prev); // *inner = *inner_prev;
+                *inner = std::move(*inner_prev);
             }
             else
                 break;
